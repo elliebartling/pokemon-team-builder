@@ -1,0 +1,129 @@
+@import 'colors';
+@import 'pokemon-colors';
+@import 'nav';
+
+$light-gray: #EFEFEF;
+
+#app {
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+#types {
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#types li {
+  display: inline-block;
+  margin: 5px;
+}
+
+span.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin: 2px;
+  &:hover {
+    background: $md-grey-700;
+  }
+}
+
+table.table {
+  text-align: left;
+  width: 90%;
+  // table-layout: fixed;
+  thead {
+    th {
+      text-transform: uppercase;
+      border-bottom: 1px solid #eceeef;
+    }
+  }
+  tbody {
+    // tr { width: 100%; }
+    tr:first-of-type th {
+      padding-top: 5px;
+    }
+    tr th {
+      padding: 2px;
+      border-bottom: transparent;
+      border-top: transparent;
+    }
+  }
+  td {
+    border-top: transparent;
+    padding: 1px;
+  }
+}
+
+
+
+span.marker {
+  background: $md-grey-300;
+  height: 30px;
+  border: transparent;
+  width: 10px;
+  padding: 0px;
+}
+
+
+
+
+#pokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.pokemon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: .5rem;
+  .sprite-container {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 100%;
+    padding: 4px;
+    border: 2px solid $md-grey-300;
+    background: $light-gray;
+    &:hover {
+      border-color: $md-pink-300;
+      cursor: pointer;
+    }
+  }
+  .sprite {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+ul.team-members {
+  background: $light-gray;
+  border-radius: 4px;
+  display: block;
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  li {
+    max-width: 16%;
+    img { object-fit: contain; width: 100%; height: 100%; }
+  }
+  li.empty-text {
+    max-width: 100%;
+  }
+}
