@@ -1,26 +1,29 @@
-
+$white: #ffffff;
 .type { border: none; box-shadow: none; }
 .type { background-color: transparent; }
-// .type:hover span { opacity: .5; }
+// .type:hover span.btn { opacity: .5; }
 
-.normal span { background: $md-brown-200; &:hover { background: darken($md-brown-200, 10%)} }
-.fighting span { background: $md-red-300; &:hover { background: darken($md-red-300, 10%)} }
-.flying span { background: $md-light-blue-300; &:hover { background: darken($md-light-blue-300, 10%)} }
-.poison span { background: $md-purple-300; &:hover { background: darken($md-purple-300, 10%)} }
-.ground span { background: $md-brown-400; &:hover { background: darken($md-brown-400, 10%)} }
-.rock span { background: $md-grey-500; &:hover { background: darken($md-grey-500, 10%)} }
-.bug span { background: $md-lime-400; &:hover { background: darken($md-lime-400, 10%)} }
-.ghost span { background: $md-deep-purple-300; &:hover { background: darken($md-deep-purple-300, 10%)} }
-.steel span { background: $md-blue-grey-300; &:hover { background: darken($md-blue-grey-300, 10%)} }
-.flying span { background: $md-light-blue-300; &:hover { background: darken($md-light-blue-300, 10%)} }
-.fire span { background: $md-red-a200; &:hover { background: darken($md-red-a200, 10%)} }
-.water span { background: $md-cyan-300; &:hover { background: darken($md-cyan-300, 10%)} }
-.grass span { background: $md-green-300; &:hover { background: darken($md-green-300, 10%)} }
-.electric span { background: $md-yellow-700; &:hover { background: darken($md-yellow-700, 10%)} }
-.psychic span { background: $md-pink-300; &:hover { background: darken($md-pink-300, 10%)} }
-.ice span { background: $md-cyan-200; &:hover { background: darken($md-cyan-200, 10%)} }
-.dragon span { background: $md-orange-300; &:hover { background: darken($md-orange-300, 10%)} }
-.dark span { background: $md-grey-800; &:hover { background: darken($md-grey-800, 10%)} }
-.fairy span { background: $md-pink-100; &:hover { background: darken($md-pink-100, 10%)} }
+.normal span.btn { background: $md-brown-200; &:hover { background: darken($md-brown-200, 10%)} }
+.fighting span.btn { background: $md-red-300; &:hover { background: darken($md-red-300, 10%)} }
+.flying span.btn { background: $md-light-blue-300; &:hover { background: darken($md-light-blue-300, 10%)} }
+.poison span.btn { background: $md-purple-300; &:hover { background: darken($md-purple-300, 10%)} }
+.ground span.btn { background: $md-brown-400; &:hover { background: darken($md-brown-400, 10%)} }
+.rock span.btn { background: $md-grey-500; &:hover { background: darken($md-grey-500, 10%)} }
+.bug span.btn { background: $md-lime-400; &:hover { background: darken($md-lime-400, 10%)} }
+.ghost span.btn { background: $md-deep-purple-300; &:hover { background: darken($md-deep-purple-300, 10%)} }
+.steel span.btn { background: $md-blue-grey-300; &:hover { background: darken($md-blue-grey-300, 10%)} }
+.flying span.btn { background: $md-light-blue-300; &:hover { background: darken($md-light-blue-300, 10%)} }
+.fire span.btn { background: $md-red-a200; &:hover { background: darken($md-red-a200, 10%)} }
+.water span.btn { background: $md-cyan-300; &:hover { background: darken($md-cyan-300, 10%)} }
+.grass span.btn { background: $md-green-300; &:hover { background: darken($md-green-300, 10%)} }
+.electric span.btn { background: $md-yellow-700; &:hover { background: darken($md-yellow-700, 10%)} }
+.psychic span.btn { background: $md-pink-300; &:hover { background: darken($md-pink-300, 10%)} }
+.ice span.btn { background: $md-cyan-200; &:hover { background: darken($md-cyan-200, 10%)} }
+.dragon span.btn { background: $md-orange-300; &:hover { background: darken($md-orange-300, 10%)} }
+.dark span.btn { background: $md-grey-800; &:hover { background: darken($md-grey-800, 10%)} }
+.fairy span.btn { background: $md-pink-100; &:hover { background: darken($md-pink-100, 10%)} }
 .unknown { display: none !important; }
 .shadow { display: none !important; }
+
+
+.dark span.btn { color: rgba($white, .7); }

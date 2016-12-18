@@ -20,26 +20,32 @@
             <th>in team</th>
             <th>weak</th>
             <th>resist</th>
+            <th>immune</th>
+            <th style="text-align:right"><a v-on:click="toggleTable()" class="btn btn-primary"><i class="fa fa-expand"></i></a></th>
           </tr>
         </thead>
-        <tbody>
-          <tr v-for="type in types">
+        <tbody v-bind:class="{ collapse: isCollapsed }">
+          <tr v-for="type in allTypes">
             <!-- Type Name -->
             <th scope="row" :class="type.name">
-              <span class="btn btn-primary type">{{ type.name }}</span>
+              <span class="btn type">{{ type.name }}</span>
             </th>
 
             <!-- Which Types are in Your Party -->
             <td class="all-types">
               <template v-for="p in team" :class="p.name">
                 <template v-for="t in p.types">
-                  <span v-bind:title="p.name" v-if="t.type.name === type.name" class="btn btn-primary marker"> </span>
+                  <span v-bind:title="p.name" v-if="t.type.name === type.name" class="btn marker"> </span>
                 </template>
               </template>
             </td>
 
             <!-- Which Types Your Team is Weak Against -->
-            <td></td>
+            <td class="weak-against-types">
+              <template v-for="p in team" :class="p.name">
+
+              </template>
+            </td>
 
             <!-- Which Types Your Team Resists -->
             <td></td>
@@ -54,8 +60,8 @@
 
       <!-- FILTERS -->
       <ul id="types">
-        <li v-on:click="filterPokes(type.name)" v-for="type in types" class="type" :class="type.name">
-          <span class="btn btn-primary type">{{ type.name }}</span>
+        <li v-on:click="filterPokes(type.name)" v-for="type in allTypes" class="type" :class="type.name">
+          <span class="btn type">{{ type.name }}</span>
         </li>
       </ul>
 
@@ -66,7 +72,7 @@
 
       <!-- POKEMON LIST -->
       <ul id="pokemon">
-        <li v-for="poke in visiblePokes" :id="poke.name" class="pokemon" v-on:click="addPokeToTeam(poke.url)">
+        <li v-for="poke in allPokes" :id="poke.name" class="pokemon" v-on:click="addPokeToTeam(poke.url)">
           <div class="sprite-container">
             <img v-bind:alt="poke.name" v-bind:title="poke.name" class="sprite" v-bind:src="poke.url | getSpriteUrl" />
           </div>
@@ -78,6 +84,9 @@
 </template>
 
 <script>
+// var Pokedex = require('pokedex-promise-v2')
+// var P = new Pokedex()
+
 export default {
   name: 'app',
 
@@ -87,18 +96,26 @@ export default {
       title: 'Pokemon Team Builder',
       // visiblePokes: this.checkCache() /* get data from parent app variable */,
       filterPokes: '',
-      team: []
+      team: [],
+      teamTypes: [],
+      isCollapsed: true
     }
   },
   props: ['pokemon'],
   computed: {
-    visiblePokes () {
+    allPokes () {
       return this.$store.state.pokemon
+    },
+    allTypes () {
+      return this.$store.state.types
+    },
+    visiblePokes () {
+      // return this.allPokes.filter(function(pokeName))
     }
   },
 
   created: function () {
-    this.getTypes()
+    // this.getTypes()
     // this.checkCache()
   },
 
@@ -120,15 +137,13 @@ export default {
     },
 
     // Get a list of all the types
-    getTypes () {
-      var app = this
-      this.$http.get('http://pokeapi.co/api/v2/type').then((response) => {
-        app.types = response.body.results
-      }, (response) => {
-        console.log('ERROR')
-        console.log(response)
-      })
-    },
+    // getTypes () {
+    //   var app = this
+    //   P.getTypesList()
+    //     .then((response) => {
+    //       app.types = response.body.results
+    //     })
+    // },
 
     // When you click a type, filter the pokemon list by type
     filterPokes (type) {
@@ -183,6 +198,17 @@ export default {
         app.team.push(response.body)
         this.$store.state.pokemonDetailed.push(response.body)
         return response.body
+      })
+    },
+
+    toggleTable () {
+      this.isCollapsed = !this.isCollapsed
+    },
+
+    // Filter pokemon by type tag
+    filterPokesByType (type) {
+      this.allPokes.filter(function () {
+        return ''
       })
     }
   },

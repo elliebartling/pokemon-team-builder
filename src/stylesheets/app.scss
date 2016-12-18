@@ -29,8 +29,21 @@ span.btn {
   padding: 5px 10px;
   border-radius: 2px;
   margin: 2px;
+  color: rgba($md-grey-900, .6);
   &:hover {
     background: $md-grey-700;
+  }
+}
+
+.btn-primary {
+  background-color: $md-grey-300;
+  border-radius: 2px;
+  border: none;
+  text-transform: lowercase;
+  transition: all 0.25s ease;
+  &:hover {
+    background-color: $md-grey-400;
+    transition: all 0.25s ease;
   }
 }
 
@@ -71,7 +84,14 @@ span.marker {
   padding: 0px;
 }
 
+input.form-control {
+  border-radius: 2px;
+  border-color: $light-gray;
+}
 
+input.form-control:focus {
+  border-color: $md-lime-500;
+}
 
 
 #pokemon {
@@ -120,7 +140,7 @@ ul.team-members {
   margin: auto;
   padding: 20px;
   li {
-    max-width: 16%;
+    max-width: 14%;
     img { object-fit: contain; width: 100%; height: 100%; }
   }
   li.empty-text {
