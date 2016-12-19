@@ -7,12 +7,12 @@
       <ul class="team-members">
         <li class="empty-text" v-if="team.length === 0">No team members yet! Add some by clicking the sprites below.</li>
         <li v-for="(poke, index) in team" :id="poke.name" class="team-member">
-          <div class="sprite-container"><img class="sprite" v-bind:src="poke.id | getSpriteFromId" /></div>
-          <span>{{ poke.name }}</span>
+          <div class="sprite-container" v-on:click="removePokemonFromTeam(poke.name)"><img class="sprite" v-bind:src="poke.id | getSpriteFromId" /></div>
         </li>
       </ul>
 
       <!-- YOUR TEAM TYPING SECTION -->
+      <div class="animated-wrapper" :class="{ closed: isCollapsed }">
       <table id="types" class="team-typing table">
         <thead>
           <tr>
@@ -21,14 +21,14 @@
             <th>weak</th>
             <th>resist</th>
             <th>immune</th>
-            <th style="text-align:right"><a v-on:click="toggleTable()" class="btn btn-primary"><i class="fa fa-expand"></i></a></th>
+            <th id="toggle-button" style="text-align:right"><a v-on:click="toggleTable()" class="btn btn-primary"><i class="fa fa-expand"></i></a></th>
           </tr>
         </thead>
-        <tbody v-bind:class="{ collapse: isCollapsed }">
+        <tbody v-bind:class="{ hidden: isCollapsed }">
           <tr v-for="type in allTypes">
             <!-- Type Name -->
             <th scope="row" :class="type.name">
-              <span class="btn type">{{ type.name }}</span>
+              <span :class="{ active: teamIncludesType(type.name) }" class="btn type"> {{ type.name }}</span>
             </th>
 
             <!-- Which Types are in Your Party -->
@@ -42,16 +42,35 @@
 
             <!-- Which Types Your Team is Weak Against -->
             <td class="weak-against-types">
-              <template v-for="p in team" :class="p.name">
-
+              <template v-for="t in teamTypes" :class="t.name">
+                <template v-for="d in t.damage_relations.double_damage_from">
+                  <span class="btn marker" v-if="d.name === type.name"></span>
+                </template>
               </template>
             </td>
 
             <!-- Which Types Your Team Resists -->
-            <td></td>
+            <td class="resists-against-types">
+              <template v-for="t in teamTypes" :class="t.name">
+                <template v-for="d in t.damage_relations.half_damage_from">
+                  <span class="btn marker" v-if="d.name === type.name"></span>
+                </template>
+              </template>
+            </td>
+
+
+            <!-- Which Types Your Team Resists -->
+            <td class="immune-against-types">
+              <template v-for="t in teamTypes" :class="t.name">
+                <template v-for="d in t.damage_relations.no_damage_from">
+                  <span class="btn marker" v-if="d.name === type.name"></span>
+                </template>
+              </template>
+            </td>
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
 
     <!-- ALL POKEMON -->
@@ -60,21 +79,22 @@
 
       <!-- FILTERS -->
       <ul id="types">
-        <li v-on:click="filterPokes(type.name)" v-for="type in allTypes" class="type" :class="type.name">
+        <li v-on:click="filterPokesByType(type.name)" v-for="type in allTypes" class="type" :class="type.name">
           <span class="btn type">{{ type.name }}</span>
         </li>
+        <li v-on:click="clearFilters()"><span class="btn btn-ghost">clear filters</span></li>
       </ul>
 
       <!-- SEARCH -->
       <div class="search-box">
-        <input class="form-control" placeholder="filter pokemon by name"></input>
+        <input v-model="search" class="form-control" placeholder="filter pokemon by name"></input>
       </div>
 
       <!-- POKEMON LIST -->
       <ul id="pokemon">
-        <li v-for="poke in allPokes" :id="poke.name" class="pokemon" v-on:click="addPokeToTeam(poke.url)">
+        <li v-for="poke in visiblePokes" :id="poke.name" class="pokemon fadeIn" v-on:click="addPokeToTeam(poke.url)">
           <div class="sprite-container">
-            <img v-bind:alt="poke.name" v-bind:title="poke.name" class="sprite" v-bind:src="poke.url | getSpriteUrl" />
+            <img v-bind:alt="poke.name" v-bind:title="poke.name" class="sprite tip" v-bind:src="poke.url | getSpriteUrl" />
           </div>
         </li>
       </ul>
@@ -84,8 +104,16 @@
 </template>
 
 <script>
-// var Pokedex = require('pokedex-promise-v2')
-// var P = new Pokedex()
+var Pokedex = require('pokedex-promise-v2')
+var Dex = new Pokedex()
+
+import $ from 'jquery'
+import 'tooltipster'
+
+var activateTipster = function () {
+  console.log('tipster activated')
+  $('.tip').tooltipster()
+}
 
 export default {
   name: 'app',
@@ -94,11 +122,17 @@ export default {
     return {
       types: '',
       title: 'Pokemon Team Builder',
-      // visiblePokes: this.checkCache() /* get data from parent app variable */,
-      filterPokes: '',
       team: [],
       teamTypes: [],
-      isCollapsed: true
+      teamTypesDamage: {
+        'resists': [],
+        'weak': [],
+        'immune': [],
+        'normal': []
+      },
+      isCollapsed: true,
+      visiblePokes: '',
+      search: ''
     }
   },
   props: ['pokemon'],
@@ -110,16 +144,69 @@ export default {
       return this.$store.state.types
     },
     visiblePokes () {
-      // return this.allPokes.filter(function(pokeName))
+      return this.$store.state.filteredPokemon
     }
   },
 
   created: function () {
-    // this.getTypes()
-    // this.checkCache()
+    // this.initCache()
+  },
+
+  ready: function () {
+    activateTipster()
   },
 
   watch: {
+    search () {
+      this.filterPokesBySearch('check')
+    },
+
+    team () {
+      var app = this
+      app.teamTypes = []
+
+      app.team.forEach((p) => {
+        // Get this pokemon's typing data
+        p.types.forEach((t) => {
+          Dex.getTypeByName(t.type.name)
+            .then((response) => {
+              app.teamTypes.push(response)
+              // checkTypingRules()
+            })
+        })
+      })
+    },
+
+    teamTypes () {
+      var app = this
+      app.team.forEach((p) => {
+        // Damage multipliers
+        // var multipliers = {
+        //   'immune': 0,
+        //   'weak': 2,
+        //   'resist': 0.5,
+        //   'neutral': 1
+        // }
+        // Blank array for holding typing data
+        var pokeTypesData = []
+
+        // Check typing rules function
+        var checkTypingRules = function () {
+          pokeTypesData.forEach((type) => {
+            if (type.damage_relations.no_damage_from.length > 0) {
+              type.damage_relations.no_damage_from.length.forEach((t) => {
+                this.teamTypes.immune.push(t.name)
+                return
+              })
+            }
+          })
+
+          checkTypingRules()
+          // If immune, add to immune and return
+          // If resist,
+        }
+      })
+    }
   },
 
   methods: {
@@ -136,23 +223,8 @@ export default {
       }
     },
 
-    // Get a list of all the types
-    // getTypes () {
-    //   var app = this
-    //   P.getTypesList()
-    //     .then((response) => {
-    //       app.types = response.body.results
-    //     })
-    // },
-
-    // When you click a type, filter the pokemon list by type
-    filterPokes (type) {
-      console.log(type)
-      var app = this
-
-      this.$http.get('http://pokeapi.co/api/v2/type/' + type).then((response) => {
-        app.filterPokes = response.body.pokemon
-      })
+    initCache () {
+      this.visiblePokes = this.$store.state.pokemon
     },
 
     // Add a pokemon to your Team
@@ -193,6 +265,7 @@ export default {
 
     fetchPokeFromAPI (url) {
       var app = this
+      // Dex.getPokemonByName()
       this.$http.get(url).then((response) => {
         // Add data to the cache
         app.team.push(response.body)
@@ -205,11 +278,59 @@ export default {
       this.isCollapsed = !this.isCollapsed
     },
 
-    // Filter pokemon by type tag
+    clearFilters () {
+      this.$store.state.filteredPokemon = this.$store.state.pokemon
+      this.search = ''
+    },
+
     filterPokesByType (type) {
-      this.allPokes.filter(function () {
-        return ''
+      var app = this
+      Dex.getTypeByName(type)
+        .then((response) => {
+          // Get an array of names of pokemon that should be visible
+          var pokeNames = []
+          response.pokemon.forEach(function (p) {
+            pokeNames.push(p.pokemon.name)
+          })
+          // Filter allPokes by pokeNames list,
+          // and return that value to visiblePokes
+          var visPokes = app.allPokes.filter(function (z) {
+            return (pokeNames.indexOf(z.name) > -1)
+          })
+          app.$store.state.filteredPokemon = visPokes
+        })
+    },
+
+    filterPokesBySearch () {
+      var app = this
+      console.log(app.search)
+      var visPokes = app.allPokes.filter(function (z) {
+        return (z.name.indexOf(app.search) > -1)
       })
+      app.$store.state.filteredPokemon = visPokes
+    },
+
+    teamIncludesType (type) {
+      var app = this
+      // console.log(type)
+      app.teamTypes.forEach((t) => {
+        if (t.name === type) {
+          return true
+        } else {
+          return false
+        }
+      })
+    },
+
+    removePokemonFromTeam (name) {
+      var app = this
+      console.log(name)
+      var newTeam = app.team.filter((p) => {
+        console.log(p.name)
+        return p.name !== name
+      })
+
+      app.team = newTeam
     }
   },
 
@@ -230,6 +351,7 @@ export default {
 
 <style lang="scss">
   @import 'stylesheets/app';
+  // @import '../../node_modules/tooltipster/dist/css/tooltipster.bundle.min.css';
 
   ul {
     list-style-type: none;
@@ -264,5 +386,12 @@ export default {
     max-width: 90%;
     margin: auto;
     border-radius: 4px;
+    margin-bottom: 4rem;
+  }
+
+  #toggle-button {
+    a.btn { padding: .5rem .75rem}
+    width: 50px;
+    padding: .75rem 0rem .75rem 0rem
   }
 </style>

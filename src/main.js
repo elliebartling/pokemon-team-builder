@@ -9,6 +9,7 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import Vuex from 'vuex'
 // import $ from 'jquery'
+// import './javascripts/tooltips.js'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
@@ -17,6 +18,7 @@ import App from './App'
 const state = {
   pokemon: '',
   types: '',
+  filteredPokemon: '',
   pokemonDetailed: [],
   team: []
 }
@@ -26,9 +28,10 @@ const mutations = {
 
   // Get Pokemon list
   getNewCache (state) {
-    P.getPokemonsList()
+    P.getPokemonsList({ limit: 811 - 28 })
       .then((response) => {
         state.pokemon = response.results
+        state.filteredPokemon = response.results
       })
   },
 
@@ -43,9 +46,14 @@ const mutations = {
 
   // Clear caches
   clearCache (state) {
+    state.filteredPokemon = ''
     state.pokemon = ''
     state.pokemonDetailed = ''
     state.types = ''
+  },
+
+  clearFilters (state) {
+    state.filteredPokemon = state.pokemon
   }
 }
 
@@ -53,6 +61,10 @@ const store = new Vuex.Store({
   state,
   mutations
 })
+
+store.commit('getNewCache')
+store.commit('getNewTypesCache')
+store.commit('clearFilters')
 
 var app = new Vue({
   el: '#app',
@@ -63,8 +75,8 @@ var app = new Vue({
   // },
 
   created: function () {
-    this.$store.commit('getNewCache')
-    this.$store.commit('getNewTypesCache')
+    // this.$store.commit('clearFilters')
+    // this.$store.commit('getNewTypesCache')
     // this.getPokemon()
     // this.$store.commit('getNewCache')
   },

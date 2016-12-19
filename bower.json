@@ -1,0 +1,21 @@
+{
+  "name": "pokemon-app",
+  "description": "A Vue.js project",
+  "main": "",
+  "authors": [
+    "Ellen Bartling <ellenbartling@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate-sass": "tgdev/animate-sass#^0.6.6"
+  }
+}

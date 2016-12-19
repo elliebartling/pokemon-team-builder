@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "pokedex-promise-v2": "^3.0.2",
+    "tooltipster": "^4.1.6",
     "vue": "^2.1.0"
   },
   "devDependencies": {

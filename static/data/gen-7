@@ -1,0 +1,424 @@
+ gen7 island1 nfe grass1 flying2  |  rowlet Rowlet
+ gen7 island1 nfe grass1 flying2  |  dartrix Dartrix
+ gen7 island1 grass1 ghost2  |  decidueye Decidueye
+ gen7 island1 nfe fire1  |  litten Litten
+ gen7 island1 nfe fire1  |  torracat Torracat
+ gen7 island1 fire1 dark2  |  incineroar Incineroar
+ gen7 island1 nfe water1  |  popplio Popplio
+ gen7 island1 nfe water1  |  brionne Brionne
+ gen7 island1 water1 fairy2  |  primarina Primarina
+ gen7 island1 island2 island3 island4 nfe normal1 flying2  |  pikipek Pikipek
+ gen7 island1 island2 island3 island4 nfe normal1 flying2  |  trumbeak Trumbeak
+ gen7 island1 island2 island3 island4 normal1 flying2  |  toucannon Toucannon
+ gen7 island1 island2 island3 island4 nfe normal1  |  yungoos Yungoos
+ gen7 island1 island2 island3 island4 normal1  |  gumshoos Gumshoos
+ gen1 island1 island2 island3 island4 nfe dark1 normal2  |  rattata-alola Rattata
+ gen1 island1 island2 island3 island4 dark1 normal2  |  raticate-alola Raticate
+ gen1 island1 island2 nfe bug1  |  caterpie Caterpie
+ gen1 island1 island2 nfe bug1  |  metapod Metapod
+ gen1 island1 island2 bug1 flying2  |  butterfree Butterfree
+ gen2 island1 island3 bug1 nfe flying2  |  ledyba Ledyba
+ gen2 island1 island3 bug1 flying2  |  ledian Ledian
+ gen2 island1 island3 bug1 nfe poison2  |  spinarak Spinarak
+ gen2 island1 island3 bug1 poison2  |  ariados Ariados
+ gen2 island1 nfe electric1  |  pichu Pichu
+ gen1 island1 nfe electric1  |  pikachu Pikachu
+ gen1 island1 electric1 psychic2  |  raichu-alola Raichu
+ gen7 island1 island2 island3 nfe bug1  |  grubbin Grubbin
+ gen7 island1 island2 island3 nfe bug1 electric2  |  charjabug Charjabug
+ gen7 island1 island2 island3 bug1 electric2 levitate  |  vikavolt Vikavolt
+ gen4 island1 island2 nfe rock1  |  bonsly Bonsly
+ gen2 island1 island2 rock1  |  sudowoodo Sudowoodo
+ gen4 island1 island2 island3 island4 nfe normal1  |  happiny Happiny
+ gen1 island1 island2 island3 island4 nfe normal1  |  chansey Chansey
+ gen2 island1 island2 island3 island4 normal1  |  blissey Blissey
+ gen4 island1 nfe normal1  |  munchlax Munchlax
+ gen1 island1 normal1  |  snorlax Snorlax
+ gen1 island1 island3 nfe water1 psychic2  |  slowpoke Slowpoke
+ gen1 island1 island3 water1 psychic2  |  slowbro Slowbro
+ gen1 island1 island3 water1 psychic2 filtered  |  slowbro-mega Mega Slowbro
+ gen2 island1 island3 water1 psychic2  |  slowking Slowking
+ gen3 island1 island3 island4 nfe water1 flying2  |  wingull Wingull
+ gen3 island1 island3 island4 water1 flying2  |  pelipper Pelipper
+ gen1 island1 nfe psychic1  |  abra Abra
+ gen1 island1 nfe psychic1  |  kadabra Kadabra
+ gen1 island1 psychic1  |  alakazam Alakazam
+ gen1 island1 psychic1 filtered  |  alakazam-mega Mega Alakazam
+ gen1 island1 island3 nfe dark1  |  meowth-alola Meowth
+ gen1 island1 island3 dark1  |  persian-alola Persian
+ gen1 island1 island3 nfe electric1 steel2  |  magnemite Magnemite
+ gen1 island1 island3 nfe electric1 steel2  |  magneton Magneton
+ gen4 island1 island3 electric1 steel2  |  magnezone Magnezone
+ gen1 island1 island3 nfe poison1 dark2  |  grimer-alola Grimer
+ gen1 island1 island3 poison1 dark2  |  muk-alola Muk
+ gen1 island1 nfe fire1  |  growlithe Growlithe
+ gen1 island1 fire1  |  arcanine Arcanine
+ gen1 island1 island4 nfe psychic1  |  drowzee Drowzee
+ gen1 island1 island4 psychic1  |  hypno Hypno
+ gen3 island1 island4 nfe fighting1  |  makuhita Makuhita
+ gen3 island1 island4 fighting1  |  hariyama Hariyama
+ gen2 island1 normal1  |  smeargle Smeargle
+ gen7 island1 island2 island3 island4 nfe fighting1  |  crabrawler Crabrawler
+ gen7 island1 island2 island3 island4 fighting1 ice2  |  crabominable Crabominable
+ gen1 island1 island2 island3 nfe ghost1 poison2 levitate  |  gastly Gastly
+ gen1 island1 island2 island3 nfe ghost1 poison2 levitate  |  haunter Haunter
+ gen1 island1 island2 island3 ghost1 poison2  |  gengar Gengar
+ gen1 island1 island2 island3 ghost1 poison2 filtered  |  gengar-mega Mega Gengar
+ gen4 island1 nfe ghost1 flying2  |  drifloon Drifloon
+ gen4 island1 ghost1 flying2  |  drifblim Drifblim
+ gen2 island1 nfe ghost1 levitate  |  misdreavus Misdreavus
+ gen4 island1 ghost1 levitate  |  mismagius Mismagius
+ gen1 island1 island2 island3 island4 nfe poison1 flying2  |  zubat Zubat
+ gen1 island1 island2 island3 island4 nfe poison1 flying2  |  golbat Golbat
+ gen2 island1 island2 island3 island4 poison1 flying2  |  crobat Crobat
+ gen1 island1 island2 island3 island4 nfe ground1 steel2  |  diglett-alola Diglett
+ gen1 island1 island2 island3 island4 ground1 steel2  |  dugtrio-alola Dugtrio
+ gen1 island1 nfe normal1 island3 flying2  |  spearow Spearow
+ gen1 island1 normal1 island3 flying2  |  fearow Fearow
+ gen5 island1 island4 sun nfe normal1 flying2  |  rufflet Rufflet
+ gen5 island1 island4 sun normal1 flying2  |  braviary Braviary
+ gen5 island1 island4 moon nfe dark1 flying2  |  vullaby Vullaby
+ gen5 island1 island4 moon dark1 flying2  |  mandibuzz Mandibuzz
+ gen1 island1 island4 nfe fighting1  |  mankey Mankey
+ gen1 island1 island4 fighting1  |  primeape Primeape
+ gen2 island1 ice1 flying2  |  delibird Delibird
+ gen7 island1 electric1 flying2  |  oricorio Oricorio
+ gen7 island2 psychic1 flying2  |  oricorio-pa-u Oricorio
+ gen7 island3 fire1 flying2  |  oricorio-baile Oricorio
+ gen7 island4 ghost1 flying2  |  oricorio-sensu Oricorio
+ gen7 island1 island3 island4 nfe bug1 fairy2  |  cutiefly Cutiefly
+ gen7 island1 island3 island4 bug1 fairy2  |  ribombee Ribombee
+ gen5 island1 island3 island4 moon nfe grass1  |  petilil Petilil
+ gen5 island1 island3 island4 moon grass1  |  lilligant Lilligant
+ gen5 island1 island3 island4 sun nfe grass1 fairy2  |  cottonee Cottonee
+ gen5 island1 island3 island4 sun grass1 fairy2  |  whimsicott Whimsicott
+ gen1 island1 island2 island3 island4 nfe water1  |  psyduck Psyduck
+ gen1 island1 island2 island3 island4 water1  |  golduck Golduck
+ gen1 island1 island2 island3 island4 nfe water1  |  magikarp Magikarp
+ gen1 island1 island2 island3 island4 water1 flying2  |  gyarados Gyarados
+ gen1 island1 island2 island3 island4 water1 dark2 filtered  |  gyarados-mega Mega Gyarados
+ gen3 island1 island2 island4 nfe water1 ground2  |  barboach Barboach
+ gen3 island1 island2 island4 water1 ground2  |  whiscash Whiscash
+ gen1 island1 island4 nfe fighting1  |  machop Machop
+ gen1 island1 island4 nfe fighting1  |  machoke Machoke
+ gen1 island1 island4 fighting1  |  machamp Machamp
+ gen5 island1 island4 nfe rock1  |  roggenrola Roggenrola
+ gen5 island1 island4 nfe rock1  |  boldore Boldore
+ gen5 island1 island4 rock1  |  gigalith Gigalith
+ gen6 island1 island4 rock1 fairy2  |  carbink Carbink
+ gen3 island1 island4 dark1 ghost2  |  sableye Sableye
+ gen3 island1 island4 dark1 ghost2 filtered  |  sableye-mega Mega Sableye
+ gen7 island1 island4 nfe rock1  |  rockruff Rockruff
+ gen7 island1 island4 sun rock1  |  lycanroc Lycanroc
+ gen7 island1 island4 moon rock1  |  lycanroc-midnight Lycanroc
+ gen3 island1 normal1  |  spinda Spinda
+ gen1 island1 island2 island3 island4 nfe water1 poison2  |  tentacool Tentacool
+ gen1 island1 island2 island3 island4 water1 poison2  |  tentacruel Tentacruel
+ gen4 island1 island2 island3 island4 nfe water1  |  finneon Finneon
+ gen4 island1 island2 island3 island4 water1  |  lumineon Lumineon
+ gen7 island1 island2 island3 water1  |  wishiwashi Wishiwashi
+ gen3 island1 island2 water1  |  luvdisc Luvdisc
+ gen2 island1 island2 water1 rock2  |  corsola Corsola
+ gen7 island1 island2 nfe poison1 water2  |  mareanie Mareanie
+ gen7 island1 island2 poison1 water2  |  toxapex Toxapex
+ gen1 island1 nfe water1  |  shellder Shellder
+ gen1 island1 water1 ice2  |  cloyster Cloyster
+ gen3 island1 nfe dragon1  |  bagon Bagon
+ gen3 island1 nfe dragon1  |  shelgon Shelgon
+ gen3 island1 dragon1 flying2  |  salamence Salamence
+ gen3 island1 dragon1 flying2 filtered  |  salamence-mega Mega Salamence
+ gen5 island2 nfe normal1  |  lillipup Lillipup
+ gen5 island2 nfe normal1  |  herdier Herdier
+ gen5 island2 normal1  |  stoutland Stoutland
+ gen1 island2 nfe normal1  |  eevee Eevee
+ gen1 island2 water1  |  vaporeon Vaporeon
+ gen1 island2 electric1  |  jolteon Jolteon
+ gen1 island2 fire1  |  flareon Flareon
+ gen2 island2 psychic1  |  espeon Espeon
+ gen2 island2 dark1  |  umbreon Umbreon
+ gen4 island2 grass1  |  leafeon Leafeon
+ gen4 island2 ice1  |  glaceon Glaceon
+ gen6 island2 fairy1  |  sylveon Sylveon
+ gen7 island2 island3 island4 nfe ground1  |  mudbray Mudbray
+ gen7 island2 island3 island4 ground1  |  mudsdale Mudsdale
+ gen2 island2 nfe normal1 fairy2  |  igglybuff Igglybuff
+ gen1 island2 nfe normal1 fairy2  |  jigglypuff Jigglypuff
+ gen1 island2 normal1 fairy2  |  wigglytuff Wigglytuff
+ gen1 island2 island4 normal1  |  tauros Tauros
+ gen2 island2 island4 normal1  |  miltank Miltank
+ gen3 island2 island3 nfe bug1 water2  |  surskit Surskit
+ gen3 island2 island3 bug1 flying2  |  masquerain Masquerain
+ gen7 island2 island3 nfe water1 bug2  |  dewpider Dewpider
+ gen7 island2 island3 water1 bug2  |  araquanid Araquanid
+ gen7 island2 nfe grass1  |  fomantis Fomantis
+ gen7 island2 grass1  |  lurantis Lurantis
+ gen7 island2 island3 nfe grass1 fairy2  |  morelull Morelull
+ gen7 island2 island3 grass1 fairy2  |  shiinotic Shiinotic
+ gen1 island2 island3 nfe bug1 grass2  |  paras Paras
+ gen1 island2 island3 bug1 grass2  |  parasect Parasect
+ gen1 island2 island3 nfe water1  |  poliwag Poliwag
+ gen1 island2 island3 nfe water1  |  poliwhirl Poliwhirl
+ gen1 island2 island3 water1 fighting2  |  poliwrath Poliwrath
+ gen2 island2 island3 water1  |  politoed Politoed
+ gen1 island2 island3 nfe water1  |  goldeen Goldeen
+ gen1 island2 island3 water1  |  seaking Seaking
+ gen3 island2 nfe water1  |  feebas Feebas
+ gen3 island2 water1  |  milotic Milotic
+ gen5 island2 water1  |  alomomola Alomomola
+ gen6 island2 nfe normal1 flying2  |  fletchling Fletchling
+ gen6 island2 nfe fire1 flying2  |  fletchinder Fletchinder
+ gen6 island2 fire1 flying2  |  talonflame Talonflame
+ gen7 island2 nfe poison1 fire2  |  salandit Salandit
+ gen7 island2 poison1 fire2  |  salazzle Salazzle
+ gen1 island2 nfe ground1  |  cubone Cubone
+ gen1 island2 fire1 ghost2  |  marowak-alola Marowak
+ gen1 island2 normal1  |  kangaskhan Kangaskhan
+ gen1 island2 normal1 filtered  |  kangaskhan-mega Mega Kangaskhan
+ gen2 island2 nfe fire1  |  magby Magby
+ gen1 island2 nfe fire1  |  magmar Magmar
+ gen4 island2 fire1  |  magmortar Magmortar
+ gen7 island2 island4 nfe normal1 fighting2  |  stufful Stufful
+ gen7 island2 island4 normal1 fighting2  |  bewear Bewear
+ gen7 island2 nfe grass1  |  bounsweet Bounsweet
+ gen7 island2 nfe grass1  |  steenee Steenee
+ gen7 island2 grass1  |  tsareena Tsareena
+ gen7 island2 fairy1  |  comfey Comfey
+ gen1 island2 island4 bug1  |  pinsir Pinsir
+ gen1 island2 island4 bug1 flying2 filtered  |  pinsir-mega Mega Pinsir
+ gen7 island2 moon normal1 psychic2  |  oranguru Oranguru
+ gen7 island2 sun fighting1  |  passimian Passimian
+ gen6 island2 island3 island4 nfe dragon1  |  goomy Goomy
+ gen6 island2 island3 island4 nfe dragon1  |  sliggoo Sliggoo
+ gen6 island2 island3 island4 dragon1  |  goodra Goodra
+ gen3 island2 island3 island4 normal1  |  castform Castform
+ gen7 island2 island4 nfe bug1 water2  |  wimpod Wimpod
+ gen7 island2 island4 bug1 water2  |  golisopod Golisopod
+ gen1 island2 nfe water1 psychic2  |  staryu Staryu
+ gen1 island2 water1 psychic2  |  starmie Starmie
+ gen7 island2 nfe ghost1 ground2  |  sandygast Sandygast
+ gen7 island2 ghost1 ground2  |  palossand Palossand
+ gen4 island2 sun nfe rock1  |  cranidos Cranidos
+ gen4 island2 sun rock1  |  rampardos Rampardos
+ gen4 island2 moon nfe rock1 steel2  |  shieldon Shieldon
+ gen4 island2 moon rock1 steel2  |  bastiodon Bastiodon
+ gen5 island2 moon nfe rock1 flying2  |  archen Archen
+ gen5 island2 moon rock1 flying2  |  archeops Archeops
+ gen5 island2 sun nfe water1 rock2  |  tirtouga Tirtouga
+ gen5 island2 sun water1 rock2  |  carracosta Carracosta
+ gen6 island2 nfe ghost1 grass2  |  phantump Phantump
+ gen6 island2 ghost1 grass2  |  trevenant Trevenant
+ gen3 island2 nfe rock1  |  nosepass Nosepass
+ gen4 island2 rock1 steel2  |  probopass Probopass
+ gen7 island2 water1  |  pyukumuku Pyukumuku
+ gen2 island2 nfe water1 electric2  |  chinchou Chinchou
+ gen2 island2 water1 electric2  |  lanturn Lanturn
+ gen7 island0 nfe normal1  |  type-null Type: Null
+ gen7 island0 normal1  |  silvally Silvally
+ gen7 island0 fighting1 filtered  |  silvally Silvally
+ gen7 island0 flying1 filtered  |  silvally Silvally
+ gen7 island0 poison1 filtered  |  silvally Silvally
+ gen7 island0 ground1 filtered  |  silvally Silvally
+ gen7 island0 rock1 filtered  |  silvally Silvally
+ gen7 island0 bug1 filtered  |  silvally Silvally
+ gen7 island0 ghost1 filtered  |  silvally Silvally
+ gen7 island0 steel1 filtered  |  silvally Silvally
+ gen7 island0 fire1 filtered  |  silvally Silvally
+ gen7 island0 water1 filtered  |  silvally Silvally
+ gen7 island0 grass1 filtered  |  silvally Silvally
+ gen7 island0 electric1 filtered  |  silvally Silvally
+ gen7 island0 psychic1 filtered  |  silvally Silvally
+ gen7 island0 ice1 filtered  |  silvally Silvally
+ gen7 island0 dragon1 filtered  |  silvally Silvally
+ gen7 island0 dark1 filtered  |  silvally Silvally
+ gen7 island0 fairy1 filtered  |  silvally Silvally
+ gen6 island0 dragon1 ground2  |  zygarde-10 Zygarde
+ gen6 island0 dragon1 ground2  |  zygarde Zygarde
+ gen5 island3 nfe poison1  |  trubbish Trubbish
+ gen5 island3 poison1  |  garbodor Garbodor
+ gen2 island3 island4 steel1 flying2  |  skarmory Skarmory
+ gen1 island3 normal1  |  ditto Ditto
+ gen2 island3 nfe fairy1  |  cleffa Cleffa
+ gen1 island3 nfe fairy1  |  clefairy Clefairy
+ gen1 island3 fairy1  |  clefable Clefable
+ gen7 island3 rock1 flying2  |  minior Minior
+ gen3 island3 nfe steel1 psychic2  |  beldum Beldum
+ gen3 island3 nfe steel1 psychic2  |  metang Metang
+ gen3 island3 steel1 psychic2  |  metagross Metagross
+ gen3 island3 steel1 psychic2 filtered  |  metagross-mega Mega Metagross
+ gen1 island3 nfe normal1  |  porygon Porygon
+ gen2 island3 nfe normal1  |  porygon2 Porygon2
+ gen4 island3 normal1  |  porygon-z Porygon-Z
+ gen6 island3 nfe fighting1  |  pancham Pancham
+ gen6 island3 fighting1 dark2  |  pangoro Pangoro
+ gen7 island3 normal1  |  komala Komala
+ gen3 island3 fire1  |  torkoal Torkoal
+ gen7 island3 sun fire1 dragon2  |  turtonator Turtonator
+ gen7 island3 electric1 steel2  |  togedemaru Togedemaru
+ gen2 island3 nfe electric1  |  elekid Elekid
+ gen1 island3 nfe electric1  |  electabuzz Electabuzz
+ gen4 island3 electric1  |  electivire Electivire
+ gen1 island3 nfe rock1 electric2  |  geodude-alola Geodude
+ gen1 island3 nfe rock1 electric2  |  graveler-alola Graveler
+ gen1 island3 rock1 electric2  |  golem-alola Golem
+ gen5 island3 nfe ground1 dark2  |  sandile Sandile
+ gen5 island3 nfe ground1 dark2  |  krokorok Krokorok
+ gen5 island3 ground1 dark2  |  krookodile Krookodile
+ gen3 island3 nfe ground1  |  trapinch Trapinch
+ gen3 island3 nfe ground1 dragon2 levitate  |  vibrava Vibrava
+ gen3 island3 ground1 dragon2 levitate  |  flygon Flygon
+ gen4 island3 nfe dragon1 ground2  |  gible Gible
+ gen4 island3 nfe dragon1 ground2  |  gabite Gabite
+ gen4 island3 dragon1 ground2  |  garchomp Garchomp
+ gen4 island3 dragon1 ground2 filtered  |  garchomp-mega Mega Garchomp
+ gen6 island3 steel1 fairy2  |  klefki Klefki
+ gen7 island3 ghost1 fairy2  |  mimikyu Mimikyu
+ gen7 island3 water1 psychic2  |  bruxish Bruxish
+ gen7 island3 moon normal1 dragon2  |  drampa Drampa
+ gen3 island3 dark1  |  absol Absol
+ gen3 island3 dark1 filtered  |  absol-mega Mega Absol
+ gen3 island3 nfe ice1  |  snorunt Snorunt
+ gen3 island3 ice1  |  glalie Glalie
+ gen3 island3 ice1 filtered  |  glalie-mega Mega Glalie
+ gen4 island3 ice1 ghost2  |  froslass Froslass
+ gen2 island3 nfe dark1 ice2  |  sneasel Sneasel
+ gen4 island3 dark1 ice2  |  weavile Weavile
+ gen1 island3 moon nfe ice1 steel2  |  sandshrew-alola Sandshrew
+ gen1 island3 moon ice1 steel2  |  sandslash-alola Sandslash
+ gen1 island3 sun nfe ice1  |  vulpix-alola Vulpix
+ gen1 island3 sun ice1 fairy2  |  ninetales-alola Ninetales
+ gen5 island3 nfe ice1  |  vanillite Vanillite
+ gen5 island3 nfe ice1  |  vanillish Vanillish
+ gen5 island3 ice1  |  vanilluxe Vanilluxe
+ gen2 island4 nfe fairy1  |  snubbull Snubbull
+ gen2 island4 fairy1  |  granbull Granbull
+ gen4 island4 nfe water1 ground2  |  shellos Shellos
+ gen4 island4 nfe water1 ground2  |  shellos-east Shellos
+ gen4 island4 water1 ground2  |  gastrodon Gastrodon
+ gen4 island4 water1 ground2  |  gastrodon-east Gastrodon
+ gen3 island4 water1 rock2  |  relicanth Relicanth
+ gen7 island4 ghost1 grass2  |  dhelmise Dhelmise
+ gen3 island4 nfe water1 dark2  |  carvanha Carvanha
+ gen3 island4 water1 dark2  |  sharpedo Sharpedo
+ gen3 island4 water1 dark2 filtered  |  sharpedo-mega Mega Sharpedo
+ gen3 island4 nfe water1  |  wailmer Wailmer
+ gen3 island4 water1  |  wailord Wailord
+ gen1 island4 water1 ice2  |  lapras Lapras
+ gen1 island4 nfe grass1 psychic2  |  exeggcute Exeggcute
+ gen1 island4 grass1 dragon2  |  exeggutor-alola Exeggutor
+ gen7 island4 nfe dragon1  |  jangmo-o Jangmo-o
+ gen7 island4 nfe dragon1 fighting2  |  hakamo-o Hakamo-o
+ gen7 island4 dragon1 fighting2  |  kommo-o Kommo-o
+ gen5 island4 electric1 flying2  |  emolga Emolga
+ gen1 island4 nfe bug1 flying2  |  scyther Scyther
+ gen2 island4 bug1 steel2  |  scizor Scizor
+ gen2 island4 bug1 steel2 filtered  |  scizor-mega Mega Scizor
+ gen2 island4 nfe dark1 flying2  |  murkrow Murkrow
+ gen4 island4 dark1 flying2  |  honchkrow Honchkrow
+ gen4 island4 nfe fighting1  |  riolu Riolu
+ gen4 island4 fighting1 steel2  |  lucario Lucario
+ gen4 island4 fighting1 steel2 filtered  |  lucario-mega Mega Lucario
+ gen1 island4 nfe dragon1  |  dratini Dratini
+ gen1 island4 nfe dragon1  |  dragonair Dragonair
+ gen1 island4 dragon1 flying2  |  dragonite Dragonite
+ gen1 island4 rock1 flying2  |  aerodactyl Aerodactyl
+ gen1 island4 rock1 flying2 filtered  |  aerodactyl-mega Mega Aerodactyl
+ gen7 island1 electric1 fairy2  |  tapu-koko Tapu Koko
+ gen7 island2 psychic1 fairy2  |  tapu-lele Tapu Lele
+ gen7 island3 grass1 fairy2  |  tapu-bulu Tapu Bulu
+ gen7 island4 water1 fairy2  |  tapu-fini Tapu Fini
+ gen7 island0 nfe psychic1  |  cosmog Cosmog
+ gen7 island0 nfe psychic1  |  cosmoem Cosmoem
+ gen7 island0 sun psychic1 steel2  |  solgaleo Solgaleo
+ gen7 island0 moon psychic1 ghost2  |  lunala Lunala
+ gen7 island0 rock1 poison2  |  nihilego Nihilego
+ gen7 island0 sun bug1 fighting2  |  buzzwole Buzzwole
+ gen7 island0 moon bug1 fighting2  |  pheromosa Pheromosa
+ gen7 island0 electric1  |  xurkitree Xurkitree
+ gen7 island0 moon steel1 flying2  |  celesteela Celesteela
+ gen7 island0 sun grass1 steel2  |  kartana Kartana
+ gen7 island0 dark1 dragon2  |  guzzlord Guzzlord
+ gen7 island0 psychic1  |  necrozma Necrozma
+ gen7 island0 steel1 fairy2  |  magearna Magearna
+<!-- gen7 island0 fighting1 ghost2  |  marshadow Marshadow --
+ gen1 island1 nfe water1  |  horsea Horsea
+ gen1 island1 nfe water1  |  seadra Seadra
+ gen2 island1 water1 dragon2  |  kingdra Kingdra
+ gen2 island1 nfe grass1  |  chikorita Chikorita
+ gen2 island1 nfe grass1  |  bayleef Bayleef
+ gen2 island1 grass1  |  meganium Meganium
+ gen2 island1 nfe fire1  |  cyndaquil Cyndaquil
+ gen2 island1 nfe fire1  |  quilava Quilava
+ gen2 island1 fire1  |  typhlosion Typhlosion
+ gen2 island1 nfe water1  |  totodile Totodile
+ gen2 island1 nfe water1  |  croconaw Croconaw
+ gen2 island1 water1  |  feraligatr Feraligatr
+ gen5 island1 nfe steel1  |  klink Klink
+ gen5 island1 nfe steel1  |  klang Klang
+ gen5 island1 steel1  |  klinklang Klinklang
+ gen5 island1 nfe ghost1 fire2  |  litwick Litwick
+ gen5 island1 nfe ghost1 fire2  |  lampent Lampent
+ gen5 island1 ghost1 fire2  |  chandelure Chandelure
+ gen5 island1 nfe dark1 dragon2  |  deino Deino
+ gen5 island1 nfe dark1 dragon2  |  zweilous Zweilous
+ gen5 island1 dark1 dragon2 levitate  |  hydreigon Hydreigon
+ gen1 island2 nfe grass1 poison2  |  bellsprout Bellsprout
+ gen1 island2 nfe grass1 poison2  |  weepinbell Weepinbell
+ gen1 island2 grass1 poison2  |  victreebel Victreebel
+ gen3 island2 nfe normal1 fairy2  |  azurill Azurill
+ gen2 island2 nfe water1 fairy2  |  marill Marill
+ gen2 island2 water1 fairy2  |  azumarill Azumarill
+ gen4 island2 nfe electric1  |  shinx Shinx
+ gen4 island2 nfe electric1  |  luxio Luxio
+ gen4 island2 electric1  |  luxray Luxray
+ gen5 island2 nfe bug1 poison2  |  venipede Venipede
+ gen5 island2 nfe bug1 poison2  |  whirlipede Whirlipede
+ gen5 island2 bug1 poison2  |  scolipede Scolipede
+ gen5 island2 nfe psychic1  |  gothita Gothita
+ gen5 island2 nfe psychic1  |  gothorita Gothorita
+ gen5 island2 psychic1  |  gothitelle Gothitelle
+ gen6 island2 nfe steel1 ghost2  |  honedge Honedge
+ gen6 island2 nfe steel1 ghost2  |  doublade Doublade
+ gen6 island2 steel1 ghost2  |  aegislash Aegislash
+ gen1 island3 nfe ground1 rock2  |  rhyhorn Rhyhorn
+ gen1 island3 nfe ground1 rock2  |  rhydon Rhydon
+ gen4 island3 ground1 rock2  |  rhyperior Rhyperior
+ gen2 island3 nfe ice1 ground2  |  swinub Swinub
+ gen2 island3 nfe ice1 ground2  |  piloswine Piloswine
+ gen4 island3 ice1 ground2  |  mamoswine Mamoswine
+ gen3 island3 nfe normal1  |  slakoth Slakoth
+ gen3 island3 nfe normal1  |  vigoroth Vigoroth
+ gen3 island3 normal1  |  slaking Slaking
+ gen4 island3 nfe grass1 poison2  |  budew Budew
+ gen3 island3 nfe grass1 poison2  |  roselia Roselia
+ gen4 island3 grass1 poison2  |  roserade Roserade
+ gen4 island3 nfe normal1 flying2  |  starly Starly
+ gen4 island3 nfe normal1 flying2  |  staravia Staravia
+ gen4 island3 normal1 flying2  |  staraptor Staraptor
+ gen5 island3 nfe psychic1  |  solosis Solosis
+ gen5 island3 nfe psychic1  |  duosion Duosion
+ gen5 island3 psychic1  |  reuniclus Reuniclus
+ gen5 island3 nfe dragon1  |  axew Axew
+ gen5 island3 nfe dragon1  |  fraxure Fraxure
+ gen5 island3 dragon1  |  haxorus Haxorus
+ gen2 island4 nfe fairy1  |  togepi Togepi
+ gen2 island4 nfe fairy1 flying2  |  togetic Togetic
+ gen4 island4 fairy1 flying2  |  togekiss Togekiss
+ gen5 island4 nfe grass1  |  snivy Snivy
+ gen5 island4 nfe grass1  |  servine Servine
+ gen5 island4 grass1  |  serperior Serperior
+ gen5 island4 nfe fire1  |  tepig Tepig
+ gen5 island4 nfe fire1 fighting2  |  pignite Pignite
+ gen5 island4 fire1 fighting2  |  emboar Emboar
+ gen5 island4 nfe water1  |  oshawott Oshawott
+ gen5 island4 nfe water1  |  dewott Dewott
+ gen5 island4 water1  |  samurott Samurott
+ gen5 island4 nfe fighting1  |  timburr Timburr
+ gen5 island4 nfe fighting1  |  gurdurr Gurdurr
+ gen5 island4 fighting1  |  conkeldurr Conkeldurr
+ gen5 island4 nfe bug1 grass2  |  sewaddle Sewaddle
+ gen5 island4 nfe bug1 grass2  |  swadloon Swadloon
+ gen5 island4 bug1 grass2  |  leavanny Leavanny
+ gen5 island4 nfe electric1 levitate  |  tynamo Tynamo
+ gen5 island4 nfe electric1 levitate  |  eelektrik Eelektrik
+ gen5 island4 electric1 levitate  |  eelektross Eelektross
+ gen6 island0 water1 dark2  |  greninja-ash Ash Greninja
