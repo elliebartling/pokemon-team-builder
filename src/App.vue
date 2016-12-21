@@ -6,9 +6,11 @@
       <h2 class="special">YOUR TEAM</h2>
       <ul class="team-members">
         <li class="empty-text" v-if="team.length === 0">No team members yet! Add some by clicking the sprites below.</li>
-        <li v-for="(poke, index) in team" :id="poke.name" class="team-member">
-          <div class="sprite-container" v-on:click="removePokemonFromTeam(poke.name)"><img class="sprite" v-bind:src="poke.id | getSpriteFromId" /></div>
-        </li>
+        <transition-group name="list-complete">
+          <li v-bind:key="poke" v-for="(poke, index) in team" :id="poke.name" class="team-member list-complete-item">
+            <div class="sprite-container" v-on:click="removePokemonFromTeam(poke.name)"><img class="sprite" v-bind:src="poke.id | getSpriteFromId" /></div>
+          </li>
+        </transition-group>
       </ul>
 
       <!-- YOUR TEAM TYPING SECTION -->
@@ -17,10 +19,10 @@
         <thead>
           <tr>
             <th>types</th>
-            <th>in team</th>
+            <!-- <th>team</th> -->
             <th>weak</th>
             <th>resist</th>
-            <th>immune</th>
+            <!-- <th>immune</th> -->
             <th id="toggle-button" style="text-align:right"><a v-on:click="toggleTable()" class="btn btn-primary"><i class="fa fa-expand"></i></a></th>
           </tr>
         </thead>
@@ -28,45 +30,52 @@
           <tr v-for="type in allTypes">
             <!-- Type Name -->
             <th scope="row" :class="type.name">
-              <span :class="{ active: teamIncludesType(type.name) }" class="btn type"> {{ type.name }}</span>
+              <span :class="{ active: teamTypes.indexOf(type.name) > -1 }" class="btn type"> {{ type.name }}</span>
             </th>
 
+
+
             <!-- Which Types are in Your Party -->
-            <td class="all-types">
+              <!-- <td class="all-types">
+                <template v-for="p in team" :class="p.name">
+                  <template v-for="t in p.types">
+                    <span v-bind:title="p.name" v-if="t.type.name === type.name" class="btn marker"> </span>
+                  </template>
+                </template>
+              </td> -->
+
+              <!-- Which Types Your Team is Weak Against -->
+              <td class="weak-against-types">
+                <template v-for="p in team" :class="p.name">
+                  <template v-if="p.damageTaken[type.name] > 1">
+                    <span class="btn marker" v-bind:title="p.name"></span>
+                  </template>
+                </template>
+              </td>
+
+              <!-- Which Types Your Team is Weak Against -->
+              <td class="resists-against-types">
+                <template v-for="p in team">
+                  <template v-if="p.damageTaken[type.name] < 1 && p.damageTaken[type.name] > 0">
+                    <span class="btn marker" v-bind:title="p.name"></span>
+                  </template>
+                </template>
+                <template v-for="p in team">
+                  <template v-if="p.damageTaken[type.name] === 0">
+                    <span class="btn marker immune" v-bind:title="p.name"></span>
+                  </template>
+                </template>
+              </td>
+
+
+            <!-- Which Types Your Team Resists -->
+            <!-- <td class="immune-against-types">
               <template v-for="p in team" :class="p.name">
-                <template v-for="t in p.types">
-                  <span v-bind:title="p.name" v-if="t.type.name === type.name" class="btn marker"> </span>
+                <template v-if="p.damageTaken[type.name] === 0">
+                  <span class="btn marker" v-bind:title="p.name"></span>
                 </template>
               </template>
-            </td>
-
-            <!-- Which Types Your Team is Weak Against -->
-            <td class="weak-against-types">
-              <template v-for="t in teamTypes" :class="t.name">
-                <template v-for="d in t.damage_relations.double_damage_from">
-                  <span class="btn marker" v-if="d.name === type.name"></span>
-                </template>
-              </template>
-            </td>
-
-            <!-- Which Types Your Team Resists -->
-            <td class="resists-against-types">
-              <template v-for="t in teamTypes" :class="t.name">
-                <template v-for="d in t.damage_relations.half_damage_from">
-                  <span class="btn marker" v-if="d.name === type.name"></span>
-                </template>
-              </template>
-            </td>
-
-
-            <!-- Which Types Your Team Resists -->
-            <td class="immune-against-types">
-              <template v-for="t in teamTypes" :class="t.name">
-                <template v-for="d in t.damage_relations.no_damage_from">
-                  <span class="btn marker" v-if="d.name === type.name"></span>
-                </template>
-              </template>
-            </td>
+            </td> -->
           </tr>
         </tbody>
       </table>
@@ -92,11 +101,13 @@
 
       <!-- POKEMON LIST -->
       <ul id="pokemon">
-        <li v-for="poke in visiblePokes" :id="poke.name" class="pokemon fadeIn" v-on:click="addPokeToTeam(poke.url)">
+        <transition-group name="list-complete">
+        <li v-for="poke in visiblePokes" v-bind:key="poke" :id="poke.name" class="pokemon list-complete-item" v-on:click="addPokeToTeam(poke.name)">
           <div class="sprite-container">
-            <img v-bind:alt="poke.name" v-bind:title="poke.name" class="sprite tip" v-bind:src="poke.url | getSpriteUrl" />
+            <img v-bind:alt="poke.name" v-bind:title="poke.name" class="sprite tip fadeIn" v-bind:src="poke.url | getSpriteUrl" />
           </div>
         </li>
+        </transition-group>
       </ul>
     </div>
   </div>
@@ -124,12 +135,6 @@ export default {
       title: 'Pokemon Team Builder',
       team: [],
       teamTypes: [],
-      teamTypesDamage: {
-        'resists': [],
-        'weak': [],
-        'immune': [],
-        'normal': []
-      },
       isCollapsed: true,
       visiblePokes: '',
       search: ''
@@ -168,109 +173,31 @@ export default {
       app.team.forEach((p) => {
         // Get this pokemon's typing data
         p.types.forEach((t) => {
-          Dex.getTypeByName(t.type.name)
-            .then((response) => {
-              app.teamTypes.push(response)
-              // checkTypingRules()
-            })
+          app.teamTypes.push(t.type.name)
         })
-      })
-    },
-
-    teamTypes () {
-      var app = this
-      app.team.forEach((p) => {
-        // Damage multipliers
-        // var multipliers = {
-        //   'immune': 0,
-        //   'weak': 2,
-        //   'resist': 0.5,
-        //   'neutral': 1
-        // }
-        // Blank array for holding typing data
-        var pokeTypesData = []
-
-        // Check typing rules function
-        var checkTypingRules = function () {
-          pokeTypesData.forEach((type) => {
-            if (type.damage_relations.no_damage_from.length > 0) {
-              type.damage_relations.no_damage_from.length.forEach((t) => {
-                this.teamTypes.immune.push(t.name)
-                return
-              })
-            }
-          })
-
-          checkTypingRules()
-          // If immune, add to immune and return
-          // If resist,
-        }
+        app.checkTeamDamageStats(p)
       })
     }
   },
 
   methods: {
 
-    checkCache () {
-      if (this.$store.state.pokemon) {
-        console.log('there is already a cache')
-        return this.$store.state.pokemon
-      } else {
-        console.log('no cache yet')
-        this.$store.commit('getNewCache')
-        // console.log('now theres a cache')
-        // return this.$store.state.pokemon
-      }
-    },
-
     initCache () {
       this.visiblePokes = this.$store.state.pokemon
     },
 
     // Add a pokemon to your Team
-    // var poke = url
+    // var poke = name
     addPokeToTeam (poke) {
       var app = this
-      var cache = app.$store.state.pokemonDetailed
-      // var pokemonData
 
-      // If team is to big, remove the first item
-      if (this.team.length === 6) {
+      if (app.team.length === 6) {
         app.team.shift()
       }
 
-      // If there's cached pokemon data at all, check it
-      if (cache.length > 0) {
-        // Filter the pokemon data by pokemon name
-        console.log(cache)
-        var cachedPoke = cache.filter(function (p) {
-          return p.url === poke
-        })
-        console.log(cachedPoke)
-        if (cachedPoke.length > 0) {
-          console.log('Found pokemon in cache')
-          console.log(cachedPoke[0])
-          app.team.push(cachedPoke)
-          return
-        } else {
-          console.log('Didn\'t find poke in cache. Creating new request.')
-          this.fetchPokeFromAPI(poke)
-        }
-      } else {
-        // Otherwise, get new data from pokeapi
-        console.log('No detailed cache yet. Creating new request.')
-        this.fetchPokeFromAPI(poke)
-      }
-    },
-
-    fetchPokeFromAPI (url) {
-      var app = this
-      // Dex.getPokemonByName()
-      this.$http.get(url).then((response) => {
-        // Add data to the cache
-        app.team.push(response.body)
-        this.$store.state.pokemonDetailed.push(response.body)
-        return response.body
+      Dex.getPokemonByName(poke).then((response) => {
+        response.damageTaken = {}
+        app.team.push(response)
       })
     },
 
@@ -312,13 +239,18 @@ export default {
 
     teamIncludesType (type) {
       var app = this
-      // console.log(type)
-      app.teamTypes.forEach((t) => {
-        if (t.name === type) {
-          return true
-        } else {
-          return false
-        }
+      // return true
+      console.log(type)
+      app.team.forEach((t) => {
+        t.types.forEach((q) => {
+          // console.log(q.type.name)
+          if (type.indexOf(q.type.name) > -1) {
+            console.log('found one')
+            return true
+          } else {
+            return false
+          }
+        })
       })
     },
 
@@ -331,6 +263,79 @@ export default {
       })
 
       app.team = newTeam
+    },
+
+    checkTeamDamageStats (pokemon) {
+      var app = this
+      var thisPokemonTypes = []
+
+      // Default damage calculations
+      var thisPokemonDamageTaken = {
+        'normal': 1,
+        'fighting': 1,
+        'flying': 1,
+        'poison': 1,
+        'ground': 1,
+        'rock': 1,
+        'bug': 1,
+        'ghost': 1,
+        'steel': 1,
+        'fire': 1,
+        'water': 1,
+        'grass': 1,
+        'electric': 1,
+        'psychic': 1,
+        'ice': 1,
+        'dragon': 1,
+        'dark': 1,
+        'fairy': 1
+      }
+
+      function retrieveTypeFromAPI (type) {
+        // Get type information from the API
+        Dex.getTypeByName(type).then((response) => {
+          thisPokemonTypes.push(response)
+          evaluatePokemonDamageTaken(response)
+        })
+      }
+
+      function evaluatePokemonDamageTaken (type) {
+        // Collect the damage-to arrays into more management vars
+        var noDamageFrom = type.damage_relations.no_damage_from
+        var halfDamageFrom = type.damage_relations.half_damage_from
+        var doubleDamageFrom = type.damage_relations.double_damage_from
+
+        // For each type that this pokemon is immune to,
+        // multiply this pokemon's damage index by 0
+        noDamageFrom.forEach((n) => {
+          console.log('Takes no damage from ' + n.name)
+          thisPokemonDamageTaken[n.name] = thisPokemonDamageTaken[n.name] * 0
+        })
+
+        halfDamageFrom.forEach((h) => {
+          console.log('Takes half damage from ' + h.name)
+          thisPokemonDamageTaken[h.name] = thisPokemonDamageTaken[h.name] * 0.5
+        })
+
+        doubleDamageFrom.forEach((d) => {
+          console.log('Takes double damage from ' + d.name)
+          thisPokemonDamageTaken[d.name] = thisPokemonDamageTaken[d.name] * 2
+        })
+
+        // Find this pokemon in the Team array and add its final
+        // damage multipliers object to it
+        for (var i = 0; i < app.team.length; i++) {
+          if (app.team[i].name === pokemon.name) {
+            console.log(app.team[i].name)
+            app.$set(app.team[i], 'damageTaken', thisPokemonDamageTaken)
+          }
+        }
+      }
+
+      // Run this series of functions for each type the pokemon has
+      pokemon.types.forEach((t) => {
+        retrieveTypeFromAPI(t.type.name)
+      })
     }
   },
 
@@ -344,6 +349,10 @@ export default {
     getSpriteFromId: function (id) {
       if (!id) return ''
       return '/static/sprites/pokemon/other-sprites/official-artwork/' + id + '.png'
+    },
+
+    checkIfMatch: function (typeName, multiplier) {
+      return 'working'
     }
   }
 }

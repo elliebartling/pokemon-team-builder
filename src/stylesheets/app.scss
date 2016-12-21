@@ -17,9 +17,6 @@ $use-fadeInRightBig 	:	true;
 $light-gray: #EFEFEF;
 
 
-.active {
-  background: red !important;
-}
 #app {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,6 +31,33 @@ $light-gray: #EFEFEF;
   margin: auto;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  span.marker {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  span.marker:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+    background: $md-grey-700;
+    z-index: 0;
+    opacity: 0;
+  }
+  span:hover {
+    &:before { opacity: .2; }
+  }
+
+  tr th span:not(.active) {
+    // opacity: .5;
+    background: $white;
+    border: 1px solid $light-gray;
+    color: $md-grey-500;
+  }
 
   // Colors for weaknesses
   .weak-against-types {
@@ -46,27 +70,36 @@ $light-gray: #EFEFEF;
     span:nth-of-type(4) {
       background: $md-red-200;
     }
+    span:nth-of-type(5) {
+      background: $md-red-400;
+    }
+    span:nth-of-type(6) {
+      background: $md-red-600;
+    }
   }
 
   // Colors for resistances
   .resists-against-types {
+    // span {margin-left: -2px;}
     span:nth-of-type(2) {
       background: $md-cyan-200;
     }
     span:nth-of-type(3) {
-      background: $md-blue-200;
+      background: $md-light-blue-200;
     }
     span:nth-of-type(4) {
-      background: $md-lime-200;
+      background: $md-blue-400;
+    }
+    span:nth-of-type(5) {
+      background: $md-blue-600;
+    }
+    span:nth-of-type(6) {
+      background: $md-blue-900;
     }
   }
 
   // Colors for immunities
-  .immune-against-types {
-    span {
-      background: $md-lime-200;
-    }
-  }
+  .immune { background: $md-lime-500 !important;}
 
 }
 #types li {
@@ -250,4 +283,18 @@ ul.team-members {
 
 table.table {
   transition: opacity .25s ease;
+}
+
+
+.list-complete-item {
+  transition: all .5s;
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-complete-enter, .list-complete-leave-active {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.list-complete-leave-active {
+  position: absolute;
 }
