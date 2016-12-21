@@ -20,6 +20,12 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
+  node: {
+      net: 'empty',
+      tls: 'empty',
+      dns: 'empty',
+      fs: "empty"
+    },
   vue: {
     loaders: utils.cssLoaders({
       sourceMap: config.build.productionSourceMap,
